@@ -1,0 +1,39 @@
+:root { font-family: system-ui, sans-serif; font-size: 20px; color: #fff; background: #000; color-scheme: dark; }
+body { margin: 0; background: #000; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { margin: 0; font-size: 2.4rem; }
+h2 { font-size: 1.4rem; margin: 32px 0 12px; }
+.sub { color: #a8b3bf; margin: 6px 0 20px; font-size: 1.1rem; }
+
+.controls { display: flex; gap: 16px; align-items: end; flex-wrap: wrap; }
+.controls label { display: flex; flex-direction: column; font-size: 1rem; gap: 6px; color: #d5dde5; }
+input, select { padding: 12px; font-size: 1.1rem; background: #111; color: #fff; border: 2px solid #3a444f; border-radius: 8px; }
+input { width: 140px; }
+input:focus, select:focus { outline: none; border-color: #4fc3f7; }
+button { padding: 13px 24px; border: 0; border-radius: 8px; font-size: 1.1rem; font-weight: 600; background: #4fc3f7; color: #000; cursor: pointer; }
+button.sec { background: #2b333c; color: #fff; }
+button:disabled { opacity: .4; cursor: not-allowed; }
+.error { color: #ff6b7a; font-size: 1.1rem; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 24px; }
+.stats div { background: #0f1317; border: 1px solid #2b333c; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; }
+.stats b { font-size: 1.7rem; }
+.stats span { font-size: .95rem; color: #a8b3bf; margin-top: 4px; }
+.stats .ok b { color: #4ade80; }
+.stats .bad b { color: #ff5c6c; }
+.stats .run b { color: #4fc3f7; }
+
+table { width: 100%; border-collapse: collapse; font-size: 1.15rem; }
+th, td { border: 1px solid #2b333c; padding: 14px; text-align: center; }
+th { background: #0f1317; }
+td.c0 { color: #6b7785; }
+td.c1 { background: #3a2a00; color: #ffb347; font-weight: 700; }
+td.c2 { background: #0b2a17; color: #4ade80; font-weight: 700; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; min-height: 44px; }
+.chip { padding: 8px 16px; border-radius: 999px; font-size: 1.2rem; font-weight: 700; color: #000; }
+.chip.0 { background: #4fc3f7; }
+.chip.1 { background: #ffb347; }
+.chip.2 { background: #4ade80; }
+
+.log { background: #0a0d10; color: #e6edf3; border: 1px solid #2b333c; border-radius: 12px; padding: 16px; max-height: 340px; overflow: auto; font-size: 1.05rem; line-height: 1.5; }
