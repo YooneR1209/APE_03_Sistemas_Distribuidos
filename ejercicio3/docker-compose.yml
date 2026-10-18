@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  simulacion-service:
+    build: ./simulacion-service
+    ports:
+      - "8080:8080"
+  metricas-service:
+    build: ./metricas-service
+    ports:
+      - "8081:8081"
+  frontend:
+    build: ./frontend-flask
+    ports:
+      - "5000:5000"
+    environment:
+      - SIMULACION_URL=http://simulacion-service:8080
+      - METRICAS_URL=http://metricas-service:8081
+    depends_on:
+      - simulacion-service
+      - metricas-service

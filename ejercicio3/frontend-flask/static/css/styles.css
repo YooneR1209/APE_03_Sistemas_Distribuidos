@@ -1,0 +1,78 @@
+:root {
+    --fondo: #0f172a; --panel: #1e293b; --borde: #334155;
+    --texto: #e2e8f0; --texto-suave: #94a3b8; --primario: #38bdf8;
+    --verde: #34d399; --ambar: #fbbf24; --rojo: #f87171;
+    --violeta: #a78bfa; --naranja: #fb923c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Segoe UI", system-ui, sans-serif; background: var(--fondo); color: var(--texto); min-height: 100vh; }
+
+header { display: flex; justify-content: space-between; align-items: center; padding: 18px 28px; border-bottom: 1px solid var(--borde); background: #0b1220; }
+header h1 { font-size: 1.4rem; }
+.subtitulo { color: var(--texto-suave); font-size: .85rem; margin-top: 4px; }
+.estado-servicios { font-size: .85rem; }
+.en-linea { color: var(--verde); } .fuera-linea { color: var(--rojo); }
+
+.banner-error { background: #7f1d1d; color: #fecaca; padding: 10px 28px; font-size: .9rem; }
+.oculto { display: none; }
+
+main { display: grid; grid-template-columns: 330px 1fr 1fr;
+    grid-template-areas: "controles almacen metricas" "controles hilos hilos" "eventos eventos eventos";
+    gap: 16px; padding: 20px 28px; }
+
+.panel { background: var(--panel); border: 1px solid var(--borde); border-radius: 12px; padding: 16px; }
+.panel h2 { font-size: 1rem; margin-bottom: 12px; color: var(--primario); display: flex; align-items: center; gap: 8px; }
+#panel-controles { grid-area: controles; } #panel-almacen { grid-area: almacen; }
+#panel-metricas { grid-area: metricas; } #panel-hilos { grid-area: hilos; } #panel-eventos { grid-area: eventos; }
+
+.campo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: .8rem; color: var(--texto-suave); }
+input { background: #0b1220; border: 1px solid var(--borde); color: var(--texto); border-radius: 8px; padding: 8px; font-size: .95rem; }
+
+details { margin: 12px 0; border: 1px dashed var(--borde); border-radius: 8px; padding: 8px; }
+summary { cursor: pointer; font-size: .85rem; color: var(--ambar); }
+.nota { font-size: .75rem; color: var(--texto-suave); margin-top: 6px; }
+
+.botones { display: flex; gap: 10px; margin-top: 14px; }
+button { flex: 1; padding: 10px; border: 1px solid var(--borde); border-radius: 8px; background: #0b1220; color: var(--texto); cursor: pointer; font-weight: 600; }
+button:hover { border-color: var(--primario); }
+button.primario { background: var(--primario); color: #0b1220; border: none; }
+
+.badge { background: #0b1220; border: 1px solid var(--borde); border-radius: 999px; padding: 2px 10px; font-size: .8rem; }
+
+.slots { display: flex; gap: 10px; flex-wrap: wrap; }
+.ranura { width: 92px; height: 64px; border: 2px dashed var(--borde); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: .68rem; color: var(--texto-suave); text-align: center; }
+.ranura.ocupada { border-style: solid; border-color: var(--verde); background: #064e3b33; color: var(--texto); }
+
+.tarjetas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.tarjeta { border-radius: 10px; padding: 12px; text-align: center; border: 1px solid var(--borde); background: #0b1220; }
+.tarjeta span { display: block; font-size: 1.6rem; font-weight: 700; }
+.tarjeta small { color: var(--texto-suave); }
+.tarjeta.verde span { color: var(--verde); } .tarjeta.azul span { color: var(--primario); }
+.tarjeta.ambar span { color: var(--ambar); } .tarjeta.roja span { color: var(--rojo); }
+
+.hilos { display: flex; flex-wrap: wrap; gap: 10px; }
+.hilo { display: flex; align-items: center; gap: 10px; background: #0b1220; border: 1px solid var(--borde); border-radius: 10px; padding: 8px 12px; font-size: .85rem; }
+.rol { font-size: .7rem; padding: 2px 8px; border-radius: 999px; }
+.rol-productor { background: #065f46; color: #d1fae5; }
+.rol-consumidor { background: #1e3a8a; color: #dbeafe; }
+
+.chip { font-size: .7rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--borde); }
+.chip-verde { color: #052e16; background: var(--verde); border: none; }
+.chip-azul { color: #0b1220; background: var(--primario); border: none; }
+.chip-ambar { color: #451a03; background: var(--ambar); border: none; }
+.chip-rojo { color: #450a0a; background: var(--rojo); border: none; }
+.chip-gris { color: var(--texto); background: #334155; border: none; }
+.chip-violeta { color: #2e1065; background: var(--violeta); border: none; }
+.chip-naranja { color: #431407; background: var(--naranja); border: none; }
+
+.tabla-scroll { max-height: 340px; overflow-y: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--borde); }
+th { color: var(--texto-suave); position: sticky; top: 0; background: var(--panel); }
+
+footer { text-align: center; color: var(--texto-suave); font-size: .75rem; padding: 14px; }
+
+@media (max-width: 1100px) {
+    main { grid-template-columns: 1fr; grid-template-areas: "controles" "almacen" "metricas" "hilos" "eventos"; }
+}

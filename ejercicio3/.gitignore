@@ -1,0 +1,118 @@
+# =============================================================================
+# .gitignore - fabrica-ensamblaje
+# Proyecto distribuido: Flask (Python) + Maven (Java) + Docker Compose
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Python / Flask (frontend-flask)
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+lib/
+lib64/
+share/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+.pytest_cache/
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# -----------------------------------------------------------------------------
+# Java / Maven (metricas-service, simulacion-service)
+# -----------------------------------------------------------------------------
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.tar.bz2
+
+# Maven / IntelliJ / Eclipse / NetBeans
+.classpath
+.project
+.factorypath
+.settings/
+*.iml
+*.ipr
+*.iws
+.idea/
+*.recommender.xml
+*spring-boot*.log
+bin/
+out/
+
+# -----------------------------------------------------------------------------
+# Docker
+# -----------------------------------------------------------------------------
+.dockerignore
+
+# -----------------------------------------------------------------------------
+# Sistema operativo
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# -----------------------------------------------------------------------------
+# IDE y editores
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.temp
+
+# -----------------------------------------------------------------------------
+# Logs y archivos temporales
+# -----------------------------------------------------------------------------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
