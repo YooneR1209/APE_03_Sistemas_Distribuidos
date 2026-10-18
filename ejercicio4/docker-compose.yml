@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: puente-backend
+    ports:
+      - "8080:8080"
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: puente-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
